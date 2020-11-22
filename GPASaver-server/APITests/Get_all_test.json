@@ -1,0 +1,3501 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+			"name": "Intro to writing tests - with examples",
+			"description": "This collection contains examples of tests that you can use to automate your testing process.\n\n- Basic test syntax\n- API tests\n- Integration tests\n\n# Quick tips for writing tests\n- Organize your test scenarios by grouping your requests in [collections](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections) and [folders](https://www.getpostman.com/docs/v6/postman/collections/managing_collections#adding-folders), and naming them descriptively\n- Document your API’s requirements using [markdown in the descriptions](https://www.getpostman.com/docs/v6/postman/collections/using_markdown_for_descriptions)\n- Use [variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables) to simulate more sophisticated user flows\n- Common tests that will be run after every request can be added to collection-level tests or folder-level tests\n\n# Resources\nIf you're not already familiar with writing tests in Postman, check out these resources.\n* Postman docs: [Test scripts](https://www.getpostman.com/docs/v6/postman/scripts/test_scripts)\n* Postman docs: [Test examples](https://www.getpostman.com/docs/v6/postman/scripts/test_examples)\n* Community contribution: [Quick reference guide](https://community.getpostman.com/t/the-postman-cheatsheet-quick-reference-guide/1054)\n* Community contribution: [Examples and guides](https://github.com/DannyDainton/All-Things-Postman)\n* Postman blog: [Writing tests in Postman](http://blog.getpostman.com/2017/10/25/writing-tests-in-postman/)\n* Postman blog: [API testing tips from a Postman professional](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)",
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "97f0cc3e-9f49-4ef1-84ff-200454a2800e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c40c84f7-d29e-4d12-a2cf-4e704fe3877b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"variables": [],
+			"order": [],
+			"folders_order": [
+				"3927437e-a828-49e7-a321-7c7fd5716a92",
+				"3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+				"1f950f64-5a27-4a61-92b0-68e7060eb100"
+			],
+			"protocolProfileBehavior": {},
+			"folders": [
+				{
+					"id": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"name": "API tests",
+					"description": "This folder contains examples of testing a single HTTP API request.\n\nIn the Postman app, under the **Tests** tab of the request builder for each request, notice the test(s) written to validate specific assertions. Some of these tests are available as a SNIPPET on the right sidebar.\n\nSend each request to see the results under the **Tests** tab in the response viewer.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "58450187-0b9b-4e82-9d68-0a07b7a39cdc",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "efc76977-89c7-40c3-8b99-9af2e46fa6b6",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": null,
+					"order": [
+						"a7672183-1802-425f-b774-2ceb6d824b75",
+						"7201478f-94e7-4404-abf1-794c3c29104c",
+						"3a0cb954-9736-43cf-8937-36e74ed50606",
+						"b0d93dcc-c125-4c3f-b527-862981bcf819",
+						"7e6da9c5-a0f3-40b1-87f3-298a17863f0f",
+						"7af4dfb2-b6c9-45df-a831-27c59df610e7",
+						"2ea721d8-ba2c-4b69-9d02-f85a217ecb8a"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd"
+				},
+				{
+					"id": "3927437e-a828-49e7-a321-7c7fd5716a92",
+					"name": "Basic test syntax",
+					"description": "Oh goody. Did you ever think you would get so excited to read this section title?\n\nThe [Postman Sandbox](https://www.getpostman.com/docs/v6/postman/scripts/postman_sandbox) is a JavaScript execution environment that is accessible during pre-request scripts and test scripts. Whatever code you write under the pre-request and test tabs is executed in this sandbox.\n\nAny code that you write under the **Tests** tab in the Postman app will execute after your request. Consequently you have access to the `pm.response` object to make assertions against the actual response -- this is what we call a Postman test.\n\nReview the example tests under the **Tests** tab in the Postman app.\n\n> **Quick tips for syntax**\n- Give each test a descriptive name. When the test fails, this will provide context to the error.\n- Use `pm.response()` as your base assertion where possible to provide more descriptive error messages.\n- Use the optional 2nd parameter in `pm.expect()` to create custom error messages.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "173018dc-2f13-40c2-8c4c-59beba93efc8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "efc938e5-8085-45e7-9ad8-f34b7ef18565",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": null,
+					"order": [
+						"37a75f80-7755-467f-bd64-60bf2fc46681",
+						"b752c0e2-0e89-443d-8a92-d388f862d135"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "3927437e-a828-49e7-a321-7c7fd5716a92"
+				},
+				{
+					"id": "1f950f64-5a27-4a61-92b0-68e7060eb100",
+					"name": "Integration tests",
+					"description": "Knowing how your endpoints interact with other systems is an important part of testing.\n\n# Automating your tests in Postman\nNow that you've written automated tests, there's a few ways to execute your tests.\n* From the Postman app with [the collection runner](https://www.getpostman.com/docs/v6/postman/collection_runs/starting_a_collection_run)\n* From the Postman cloud with [a scheduled monitor](https://www.getpostman.com/docs/v6/postman/monitors/intro_monitors)\n* From the command line or as part of a CI/CD pipeline [with Newman](http://blog.getpostman.com/2018/06/21/newman-run-and-test-your-collections-from-the-command-line/)\n\n![[newman gif](https://s3.amazonaws.com/postman-static-getpostman-com/postman-docs/newmanEcho.gif)](https://s3.amazonaws.com/postman-static-getpostman-com/postman-docs/newmanEcho.gif)\n\n# Other helpful tools\nThere are a number of tools for visualizing your test results. When a test fails, you can drill down to debug and isolate the issues.\n* Console [to visualize network calls and log statements](https://www.getpostman.com/docs/v6/postman/sending_api_requests/debugging_and_logs#network-calls-with-postman-console)\n* Similar [console for monitors](https://www.getpostman.com/docs/v6/postman/monitors/troubleshooting_monitors)\n* [Viewing monitor results](https://www.getpostman.com/docs/v6/postman/monitors/viewing_monitor_results) and [receiving alerts for failures](https://www.getpostman.com/docs/v6/postman/monitors/integrations_for_alerts)\n* Common [reporters for Newman output](https://github.com/postmanlabs/newman#reporters)\n* [Mock services](https://medium.com/postman-engineering/https-medium-com-postman-engineering-fake-it-till-you-make-it-mocks-for-agile-development-f4d050cad694) for isolating dependencies\n",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4c6241e9-22ab-48df-acaf-60d87ebb6c6e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c1174c3-788f-4b7f-bc2b-97eafc91d4b9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": null,
+					"order": [],
+					"folders_order": [
+						"2743a9be-7e64-4f6d-8f47-4e47fc634a36",
+						"92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+						"7ba20e6c-8a9c-4667-8a26-6756ccc7e4af",
+						"b7dbfe1f-537e-4e24-978a-54dc4f2ba3a8"
+					],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "1f950f64-5a27-4a61-92b0-68e7060eb100"
+				},
+				{
+					"id": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"name": "Scenario",
+					"description": "The requests in this sub-folder demonstrate how your scenario tests can be structured.\n\nExecuting the requests in this folder runs your API tests sequentially mirroring typical user behavior. \n\n# Control your workflow\nYou can also use the `postman.setNextRequest()` method to [control your workflow](https://www.getpostman.com/docs/v6/postman/scripts/branching_and_looping) and create more sophisticated testing logic.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fcec6e94-068c-4643-bc06-5358c5551faa",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd7fbc87-a1eb-48ab-b333-fa7ad6ec7420",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "1f950f64-5a27-4a61-92b0-68e7060eb100",
+					"order": [
+						"06a6fd65-d474-460a-9e13-6eae387b97b0",
+						"32f0d9de-08e5-4af3-a993-e71fb4ff9e6f",
+						"8832562b-c87d-4f1d-b1d6-a742d8d74ee1",
+						"c23dc715-edfa-4593-891b-e1434cfba97f",
+						"1ffb2480-9de3-4305-a422-1759a25a7ac6",
+						"dcffc35a-abec-4ca0-abb6-9d3dcb5cb77f"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12"
+				},
+				{
+					"id": "7ba20e6c-8a9c-4667-8a26-6756ccc7e4af",
+					"name": "Service Consumer → Service Provider #contract",
+					"description": "The requests in this folder are from a [NodeJS API](https://github.com/auth0-blog/nodejs-jwt-authentication-sample) that supports username and password authentication with JWTs and has APIs that return Chuck Norris phrases. \n\n---\n\nNaming a collection or folder with `#contract` or `#integration` allows you to programmatically parse the tests that should be run in different circumstances, when used in conjunction with the [Postman API](https://docs.api.getpostman.com/).\n\n# Using workspaces for automation\nUse workspaces to organize your services, and also to group together collections of tests that must be passed when deploying new code to the next server environment. Use the [Postman API](https://docs.api.getpostman.com/) to fetch a workspace along with all the collections and environments associated with that workspace and create a programmatic solution. \n\nHere's one way the Postman team uses collections and workspaces for automation:\n\n1. Create a collection of validation tests for the provider service. This can include contract validation tests driven by the consumers who are dependent on this service. This can also include integration tests to ensure more complex scenarios involving other components aren't broken when deploying new code.\n2. The name of the collection can include a tag indicating when these tests should be executed (e.g. #contract or #integration). The collection can be shared to the workspace of the provider service. Alternatively, a new workspace can be created (e.g. Continuous Integration) containing all the collections of tests that you care about in the specified circumstances.\n3. Use the [Postman API](https://docs.api.getpostman.com/) to `GET` all the collections and environments associated with your workspace. Parse the entities to discern which collections should be run in the specified circumstances.\n\n# Setup and teardown\nNotice the nested folders are organized according to Setup, Tests, and Teardown. Automating the setup and teardown steps allows you to quickly re-create your test conditions in a consistent way so that you can repeat your tests quickly and easily.\n",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b7406472-5b8f-4cfd-9e69-8774353a642a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bdf78d1-50c0-4cf2-80f1-0611965055eb",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "1f950f64-5a27-4a61-92b0-68e7060eb100",
+					"order": [],
+					"folders_order": [
+						"05c85e59-df01-42bf-936e-94f962ccfeea",
+						"8f673573-0122-4199-aa5d-30de94a79b84",
+						"73612cb4-fd1b-4021-bbfd-f88a061f0910"
+					],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "7ba20e6c-8a9c-4667-8a26-6756ccc7e4af"
+				},
+				{
+					"id": "05c85e59-df01-42bf-936e-94f962ccfeea",
+					"name": "Setup",
+					"description": "Sometimes you need to do some initial groundwork to prepare your test environment for your test cases. Perhaps you're generating new users, creating authentication tokens, or simply initializing variables.\n\nYou can handle setup and teardown as separate requests occurring respectively before and after your tests. You can also handle setup and teardown for _each_ request as pre-request or test scripts.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7d116a3f-0a78-4034-bd7a-62060e43a959",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e6dead60-55f6-47ed-a375-fe0be8c0c198",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "7ba20e6c-8a9c-4667-8a26-6756ccc7e4af",
+					"order": [
+						"58f1e1e2-f515-49d0-a60c-5a86a6da1ec4",
+						"7f71ddc1-1b6e-4bc9-8ca1-32a41a4dcf11"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "05c85e59-df01-42bf-936e-94f962ccfeea"
+				},
+				{
+					"id": "73612cb4-fd1b-4021-bbfd-f88a061f0910",
+					"name": "Teardown",
+					"description": "After your tests run, you may need to clean up the test conditions, so that you're not littering new users, records, and other side effects throughout your test environment.\n\nThe requests in this folder are just examples of cleaning up your test environment. You can't actually delete users or sessions in this example.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "85b8ddb7-14c2-4bcc-a4aa-ede8f7523049",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "95e682a1-a678-4b03-a747-079f71ab83fc",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "7ba20e6c-8a9c-4667-8a26-6756ccc7e4af",
+					"order": [
+						"65b5fcf0-be04-462a-b58d-79155fb79759",
+						"1a2e4a9a-7dee-4e19-9e8e-c46f7df7fdf7"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "73612cb4-fd1b-4021-bbfd-f88a061f0910"
+				},
+				{
+					"id": "8f673573-0122-4199-aa5d-30de94a79b84",
+					"name": "Tests",
+					"description": "Automating the setup and teardown allows you to quickly re-create your test conditions in a consistent way so that you can repeat your tests. Creating repeatable tests allows you to more efficiently tweak other variables, isolate the system under test, and observe the results in a scalable manner.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9794f845-c6e6-4c0e-8935-284919578a69",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "287ba19a-2644-444b-901c-9a45bf22835d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "7ba20e6c-8a9c-4667-8a26-6756ccc7e4af",
+					"order": [
+						"ea727293-b92a-4372-940e-a5ff350a636c"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "8f673573-0122-4199-aa5d-30de94a79b84"
+				},
+				{
+					"id": "b7dbfe1f-537e-4e24-978a-54dc4f2ba3a8",
+					"name": "Using mocks",
+					"description": "[Mocking an endpoint](https://medium.com/postman-engineering/https-medium-com-postman-engineering-fake-it-till-you-make-it-mocks-for-agile-development-f4d050cad694) allows you to simulate external or internal dependencies so that you can isolate the system under test. It also allows you to mock certeain error conditions that may be difficult or problematic to re-create in a production environment\n\nThe first request in this folder mocks an external endpoint. We previously reviewed an example using the [Coindesk API](https://www.coindesk.com/api/). Instead of making a request to the Coindesk API, we will rely on a mock response from the Postman cloud.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "95d6175b-7f88-489d-a0c4-989c872f4f39",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a84d3d0-263c-42f4-b331-4ad172daa290",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "1f950f64-5a27-4a61-92b0-68e7060eb100",
+					"order": [
+						"4e5aa508-dd45-4fdd-9734-68fe9912358b",
+						"f0ce500e-a514-4f88-9561-b15d339c1fac"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "b7dbfe1f-537e-4e24-978a-54dc4f2ba3a8"
+				},
+				{
+					"id": "2743a9be-7e64-4f6d-8f47-4e47fc634a36",
+					"name": "Using variables",
+					"description": "The 2 requests in this sub-folder demonstrate how you can use variables to save information that can be used in subsequent requests. Let's see how to do this with an [environment variable](https://www.getpostman.com/docs/v6/postman/environments_and_globals/intro_to_environments_and_globals).\n\n### Considerations for using variables\nIf you're planning to automate your testing and / or run your test suite as part of your Continuous Integration / Continuous Delivery (CI/CD) pipeline, there's some considerations for how you handle your [variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables).\n\n![[variable scopes](https://i.imgur.com/cQFnvSZ.png)](https://i.imgur.com/cQFnvSZ.png)\n\n* [Local variables](https://community.getpostman.com/t/the-postman-cheatsheet-quick-reference-guide/1054/7?u=joyce) can be used to save a temporary state within a request and also throughout a collection run. Using a local variable means you won't have to unset the variable during teardown or pollute your namespace.\n* [Environment variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/manage_environments) are portable and can be used to store server configuration elements. In this way, you can easily swap out the configuration for your staging environment with your production environment when necessary.\n* [Collection variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables#defining-collection-variables) are specific to a single collection.\n* [Global variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/manage_globals) are specific to a single workspace. In a personal workspace, your `username` might never change. In a team workspace, you might have dummy user credentials that are shared across the team.\n* [Session variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/sessions) are available for global, collection, and environment variables to maintain variable values within your current session. In this way, you can keep your mutations private and not overwrite any team values.\n\n### Persisting variable values\nVariables can be used to save and update a value throughout a collection run. What if you want to use variables to save state across different runs of the same collection?\n\nSay you want to save the highest ranked player on a leaderboard as an environment value. The behavior of persisting variable values after a collection has been run may differ depending on how you run your collection.\n\n* In the Postman app [collection runner](https://www.getpostman.com/docs/v6/postman/collection_runs/intro_to_collection_runs), the default setting is that variables are NOT persisted. That means at the end of a collection run, any variable values that you updated throughout the collection run will be reset to their initial values. There is a checkbox to `Keep variable values` that you can select as an option in the collection runner window before you run the collection.\n* With [Newman](https://www.getpostman.com/docs/v6/postman/collection_runs/command_line_integration_with_newman) and [Postman monitors](https://www.getpostman.com/docs/v6/postman/monitors/intro_monitors), the default setting is that variables are NOT persisted. In this case, there's no built-in option to persist your values. However, you can use the [Postman API](https://docs.api.getpostman.com/) to [update your environment](https://docs.api.getpostman.com/#6517e0d6-3bc3-3da5-ab57-7a578a8504ce), running this request as part of your collection.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "885f4c69-6590-4944-8321-659030d14470",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b80877c8-9f5d-4e96-a226-d9798691ac8f",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folder": "1f950f64-5a27-4a61-92b0-68e7060eb100",
+					"order": [
+						"790a2d87-5d88-4f4d-8f6f-861540b34aaf",
+						"3a144dc3-4992-4a75-986d-96ca37b3a839"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"folderId": "2743a9be-7e64-4f6d-8f47-4e47fc634a36"
+				}
+			],
+			"requests": [
+				{
+					"id": "06a6fd65-d474-460a-9e13-6eae387b97b0",
+					"name": "Fetch a list of items",
+					"url": "http://localhost:3002/items",
+					"description": "A `GET` to the `/items` endpoint allows your application to fetch a list of all items.\n\nLook under **Examples** to view an example response.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"type": "text",
+							"value": "Bearer {{example_api_key}}"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4997faad-866a-4796-9e15-bb34298012e7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    pm.response.to.be.an.array; ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"responses": [
+						{
+							"id": "14d106b6-0564-4aee-9874-da916af8c1b4",
+							"name": "Fetch a list of items",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "[\n    {\n        \"item_id\": \"304829\",\n        \"name\": \"delicata\",\n        \"price\": \"0.79\",\n        \"unit\": \"lb\",\n        \"currency\": \"USD\"\n    },\n    {\n        \"item_id\": \"304830\",\n        \"name\": \"butternut\",\n        \"price\": \"0.59\",\n        \"unit\": \"lb\",\n        \"currency\": \"USD\"\n    },\n    {\n        \"item_id\": \"304831\",\n        \"name\": \"acorn\",\n        \"price\": \"0.49\",\n        \"unit\": \"lb\",\n        \"currency\": \"USD\"\n    }\n]",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "12ba2bf5-3ae6-4872-8ed7-85c0388d2850",
+								"method": "GET",
+								"headers": "Authorization: Bearer {{example_api_key}}\nContent-Type: application/json",
+								"url": "http://localhost:3002/items?Authorization=Bearer {{example_api_key}}&Content-type=application/json",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"headerData": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [],
+							"cookies": [],
+							"request": "06a6fd65-d474-460a-9e13-6eae387b97b0",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is an array\", function () {\n    pm.response.to.be.an.array; \n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "Authorization: Bearer {{example_api_key}}\nContent-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "1a2e4a9a-7dee-4e19-9e8e-c46f7df7fdf7",
+					"name": "Delete session",
+					"url": "http://localhost:3001/sessions/create",
+					"description": "The body must have `username` and `password`. It returns `id_token` and `access_token` are signed with the secret located at the `config.json` file. The `id_token` will contain the `username` and the `extra` information sent, while the `access_token` will contain the `audience`, `jti`, `issuer` and `scope`.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "noauth"
+					},
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3cd483d6-0e59-4238-9085-d71bca7284f9",
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"jwt_token\", response.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "73612cb4-fd1b-4021-bbfd-f88a061f0910",
+					"responses": [
+						{
+							"id": "79e297ce-994c-4950-9533-1b17aeeb64a7",
+							"name": "Successful response",
+							"status": "Created",
+							"mime": "",
+							"language": "json",
+							"text": "{\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJleHRyYSI6ImJsZXJnIiwiaWQiOjIsImlhdCI6MTUzNjg3MTQ4MiwiZXhwIjoxNTM2ODg5NDgyfQ.ssLIBEyAF73iQQH7byi6OiXfa1r467wKx_VmfhjJSeY\",\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2dvbnRvLmNvbSIsImF1ZCI6Im5vZGVqcy1qd3QtYXV0aCIsImV4cCI6MTUzNjg3NTA4Miwic2NvcGUiOiJmdWxsX2FjY2VzcyIsInN1YiI6ImxhbGFsYW5kfGdvbnRvIiwianRpIjoiRVJmSVVoR2hmaUxNbDFFUyIsImFsZyI6IkhTMjU2IiwiaWF0IjoxNTM2ODcxNDgyfQ.isN1Pl40xa8Ml_8Alh6kcrqO6JvXCkXdCBx0IFeFzCc\"}",
+							"responseCode": {
+								"code": 201,
+								"name": "Created",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "7632007f-bd04-4f74-92f0-cf3a30f921e5",
+								"method": "POST",
+								"headers": "Content-Type: application/json",
+								"dataMode": "raw",
+								"url": "http://localhost:3001/sessions/create",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"data": [],
+								"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\"\n}"
+							},
+							"headers": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "523",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Sep 2018 20:44:42 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20b-OddoFD1q11lfCJ55kXMN6jd5YHE\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookies": [],
+							"request": "1a2e4a9a-7dee-4e19-9e8e-c46f7df7fdf7",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "const response = pm.response.json();\n\npm.environment.set(\"jwt_token\", response.access_token);",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "1ffb2480-9de3-4305-a422-1759a25a7ac6",
+					"name": "Delete item from cart",
+					"url": "http://localhost:3002/{{memberId}}/cart/{{itemId}}",
+					"description": "A `DELETE` to the `/:memberId/cart/:itemId` endpoint allows your application to delete an item to the specified member's cart.\n\nLook under **Examples** to view an example response.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Authorization",
+							"type": "text",
+							"value": "Bearer {{example_api_key}}"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json",
+							"type": "text"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5f235f8b-5d3e-46f2-859e-97fa79d13a31",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Successful delete status response\", function () {",
+									"    let response = pm.response.json();",
+									"    pm.expect(response.status).to.equal(\"item removed\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"responses": [
+						{
+							"id": "2be06bbb-d57f-433e-a907-a7e70c301725",
+							"name": "Delete item from cart",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n\t\"cart_id\": \"109\",\n\t\"status\": \"item removed\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "d4172dd5-1bf2-4d4f-9895-4a5239d4b382",
+								"method": "DELETE",
+								"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json",
+								"dataMode": "raw",
+								"url": "http://localhost:3002/{{memberId}}/cart/{{itemId}}?Authorization=Bearer {{example_api_key}}&Content-type=application/json",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"headerData": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"data": [],
+								"rawModeData": ""
+							},
+							"headers": [],
+							"cookies": [],
+							"request": "1ffb2480-9de3-4305-a422-1759a25a7ac6",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Successful delete status response\", function () {\n    let response = pm.response.json();\n    pm.expect(response.status).to.equal(\"item removed\");\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "",
+					"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "2ea721d8-ba2c-4b69-9d02-f85a217ecb8a",
+					"name": "SQL injection security check",
+					"url": "https://postman-echo.com/post",
+					"description": "Hackers can attack your web server by injecting malicious strings as a request parameter. If your server is not handling user input properly, these strings can be interpreted by your server as SQL commands that result in leaking sensitive information or general mayhem.\n\nMore resources [here](https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet).",
+					"data": [
+						{
+							"key": "customerName",
+							"value": "' or '1'='1",
+							"description": " String query = \"SELECT account_balance FROM user_data WHERE user_name = \"\n   + request.getParameter(\"customerName\");",
+							"type": "text"
+						},
+						{
+							"key": "anotherAttack",
+							"value": "' or 1=1; drop table myTable; --",
+							"description": "Probably best not to do this one in production, or at all, except for demonstration purposes",
+							"type": "text",
+							"enabled": false
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "89bf5d95-2eee-4cca-b9de-71abe3e207f9",
+								"exec": [
+									"pm.test(\"Does not return password\", function () {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.form.customerName).to.not.include(\"examplePassword\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "455e3338-232f-40e7-a11f-92bcac8f99f2",
+							"name": "SQL injection security check",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {},\n    \"data\": \"\",\n    \"files\": {},\n    \"form\": {\n        \"customerName\": \"' or '1'='1\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"content-length\": \"38\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"content-type\": \"application/x-www-form-urlencoded\",\n        \"cookie\": \"sails.sid=s%3A7tFj5KB_lujWMK1xoroPV_xSKkRDxR1W.qUauhME8lGY%2FnBlCT4iVRCs0badee7%2Fmen9XorL%2FJ4s\",\n        \"postman-token\": \"031152dc-59c7-4529-8f8a-29faf9f41afe\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"json\": {\n        \"customerName\": \"' or '1'='1\"\n    },\n    \"url\": \"https://postman-echo.com/post\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "23b81ef1-3e19-4a66-821f-7348a39cba5a",
+								"method": "POST",
+								"headers": "",
+								"dataMode": "urlencoded",
+								"data": [
+									{
+										"key": "customerName",
+										"value": "' or '1'='1",
+										"description": " String query = \"SELECT account_balance FROM user_data WHERE user_name = \"\n   + request.getParameter(\"customerName\");",
+										"type": "text"
+									},
+									{
+										"key": "anotherAttack",
+										"value": "' or 1=1; drop table myTable; --",
+										"description": "Probably best not to do this one in production, or at all, except for demonstration purposes",
+										"type": "text",
+										"enabled": false
+									}
+								],
+								"url": "https://postman-echo.com/post",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": []
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:54:34 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"249-6aeADdjaahUu4RmO474pv4LUCJk\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "set-cookie",
+									"value": "sails.sid=s%3AqIFh_GxNGvPg8xIoXG3SXa3q2FttuGK_.CEzJcRVX9GQwHnXPKthJmnkwV90OP23VXhuGizFFuXE; Path=/; HttpOnly"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "2ea721d8-ba2c-4b69-9d02-f85a217ecb8a",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Does not return password\", function () {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.form.customerName).to.not.include(\"examplePassword\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "32f0d9de-08e5-4af3-a993-e71fb4ff9e6f",
+					"name": "Create a new item",
+					"url": "http://localhost:3002/items",
+					"description": "A `POST` to the `/items` endpoint allows your application to create a new item. A successful response will return an `item_id`, which can be saved as an environment variable to be used in subsequent requests.\n\nLook under **Examples** to view an example response.",
+					"data": [
+						{
+							"key": "name",
+							"value": "kabocha",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "0.89",
+							"type": "text"
+						},
+						{
+							"key": "unit",
+							"value": "lb",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "USD",
+							"type": "text"
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "params",
+					"headerData": [
+						{
+							"key": "Authorization",
+							"type": "text",
+							"value": "Bearer {{example_api_key}}"
+						},
+						{
+							"key": "Content-type",
+							"type": "text",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ce9f82a1-472d-4f07-bbca-656d0e63cbc8",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"// save the `item_id` returned in the response as an environment variable",
+									"let jsonResponse = pm.response.json();",
+									"pm.environment.set(\"itemId\", jsonResponse.item_id);",
+									"pm.environment.set(\"itemName\", jsonResponse.name);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"responses": [
+						{
+							"id": "f821286f-a1dc-4496-b6a0-4c51ff2b2023",
+							"name": "Create a new item",
+							"status": "Created",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"item_id\": \"304832\",\n    \"name\": \"kabocha\",\n    \"price\": \"0.89\",\n    \"unit\": \"lb\",\n    \"currency\": \"USD\"\n}",
+							"responseCode": {
+								"code": 201,
+								"name": "Created",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "674c31a4-6338-48c2-b244-8583223bdfdb",
+								"method": "POST",
+								"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json",
+								"dataMode": "params",
+								"data": [
+									{
+										"key": "name",
+										"value": "kabocha",
+										"type": "text"
+									},
+									{
+										"key": "price",
+										"value": "0.89",
+										"type": "text"
+									},
+									{
+										"key": "unit",
+										"value": "lb",
+										"type": "text"
+									},
+									{
+										"key": "currency",
+										"value": "USD",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:3002/items?Authorization=Bearer {{example_api_key}}&Content-type=application/json",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"headerData": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								]
+							},
+							"headers": [],
+							"cookies": [],
+							"request": "32f0d9de-08e5-4af3-a993-e71fb4ff9e6f",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 201\", function () {\n    pm.response.to.have.status(201);\n});\n\n// save the `item_id` returned in the response as an environment variable\nlet jsonResponse = pm.response.json();\npm.environment.set(\"itemId\", jsonResponse.item_id);\npm.environment.set(\"itemName\", jsonResponse.name);\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "37a75f80-7755-467f-bd64-60bf2fc46681",
+					"name": "pm.test",
+					"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+					"description": "In the Postman app, review the tests written under the **Tests** tab in the request builder on the top. Send this request, and view the results of the tests under the **Tests** tab in the response viewer on the bottom.\n\n### The `pm.*` API\n\nUse the `pm.*` API to write your test under the **Tests** tab in Postman. The `pm.test()` method accepts 2 parameters. The first parameter is the name of the test, so it's important to give your test a descriptive name to provide more information in case the test fails. The second parameter is a function whereby if any assertions within your function fail, then the test will fail.\n\n```\npm.test(\"Name of the second test\", function () {\n    // make as many assertions as you'd like as part of this test\n    // if any assertion throws an error, this test will fail\n    pm.response.to.have.status(200);\n    pm.response.to.be.ok;\n    pm.response.to.be.json;\n});\n```",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ac8d0a47-fa27-4a30-9b22-94768ad53606",
+								"exec": [
+									"// use the `pm.*` API to write your test",
+									"// the `pm.test()` method accepts 2 parameters",
+									"// the first parameter is the name of your test (be descriptive)",
+									"// the second parameter is a function whereby if any assertions within your function fail, then the test will fail",
+									"",
+									"pm.test(\"Name of the first test\", function () {",
+									"    // make an assertion",
+									"    // if your assertion throws an error, this test will fail",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Name of the second test\", function () {",
+									"    // make as many assertions as you'd like as part of this test",
+									"    // if any assertion throws an error, this test will fail",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3927437e-a828-49e7-a321-7c7fd5716a92",
+					"responses": [
+						{
+							"id": "0c0f275b-e226-46e3-9d87-810cb2b46c25",
+							"name": "Status",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "3320c738-72d1-4f34-9197-da3722fceaa8",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "37a75f80-7755-467f-bd64-60bf2fc46681",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "// use the `pm.*` API to write your test\n// the `pm.test()` method accepts 2 parameters\n// the first parameter is the name of your test (be descriptive)\n// the second parameter is a function whereby if any assertions within your function fail, then the test will fail\n\npm.test(\"Name of the first test\", function () {\n    // make an assertion\n    // if your assertion throws an error, this test will fail\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Name of the second test\", function () {\n    // make as many assertions as you'd like as part of this test\n    // if any assertion throws an error, this test will fail\n    pm.response.to.have.status(200);\n    pm.response.to.be.ok;\n    pm.response.to.be.json;\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "3a0cb954-9736-43cf-8937-36e74ed50606",
+					"name": "Data type",
+					"url": "https://postman-echo.com/patch",
+					"description": "This test is to validate the content type of the returned content. This SNIPPET is also available on the right sidebar under `Response headers: Content-Type header check`.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "PATCH",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "de9e0efd-3a7c-4576-823d-36a19d7ed04f",
+								"exec": [
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"pm.test(\"Content-Type is JSON\", function () {",
+									"    pm.response.to.be.json;",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "cb0e7899-0a99-4db4-bf4c-ad5794cbd0bb",
+							"name": "Data type",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {},\n    \"data\": \"This is expected to be sent back as part of response body.\",\n    \"files\": {},\n    \"form\": {},\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"content-length\": \"58\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"content-type\": \"text/plain\",\n        \"cookie\": \"sails.sid=s%3AUuE9kqyAFxbvBvvH8aX3WEBLXiNgjK7-.ErzxoeVFY7HfTK%2BPjoOs%2BzaP3yU8%2BcM59adz0oo9LlA\",\n        \"postman-token\": \"ebd30dd5-0044-4665-ae5c-cb31118f1119\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"json\": null,\n    \"url\": \"https://postman-echo.com/patch\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "e670e6c5-8253-43ca-99ec-a64486502f7a",
+								"method": "PATCH",
+								"headers": "",
+								"dataMode": "raw",
+								"url": "https://postman-echo.com/patch",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [],
+								"data": [],
+								"rawModeData": "This is expected to be sent back as part of response body."
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:46 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"237-50TomUYGT9/V9ahCSqZGYpnnS48\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "410"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "3a0cb954-9736-43cf-8937-36e74ed50606",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Content-Type is present\", function () {\n    pm.response.to.have.header(\"Content-Type\");\n});\n\npm.test(\"Content-Type is JSON\", function () {\n    pm.response.to.be.json;\n})",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "This is expected to be sent back as part of response body.",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "3a144dc3-4992-4a75-986d-96ca37b3a839",
+					"name": "Echo the exchange rate",
+					"url": "https://postman-echo.com/get?foo1={{bitcoinRate}}",
+					"description": "This request will use information saved to a variable in a previous request.\n\nYou can send the request to view this information echoed back in the response. Alternatively, you can click the **Quick Look** in the top right [to verify the environment variable has been set](https://www.getpostman.com/docs/v5/postman/environments_and_globals/manage_environments#editing-an-active-environment).",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "{{bitcoinRate}}",
+							"description": "Set this variable in the previous request"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8d374355-439b-4d1c-94bd-ef1dbc59c8ae",
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "2743a9be-7e64-4f6d-8f47-4e47fc634a36",
+					"responses": [
+						{
+							"id": "33763e34-afdc-41a1-83b9-8ebfaae6442c",
+							"name": "Status",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "146b8e42-de4b-4480-90a5-c1f87c2d0745",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "3a144dc3-4992-4a75-986d-96ca37b3a839",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"response is ok\", function () {\n    pm.response.to.have.status(200);\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "4e5aa508-dd45-4fdd-9734-68fe9912358b",
+					"name": "Mocked endpoint",
+					"url": "https://c54c22f8-1b5e-4f00-8865-684319b1105b.mock.pstmn.io/bitcoin",
+					"description": "Instead of making a request to the [Coindesk API](https://www.coindesk.com/api/), this request relies on a [Postman mock endpoint](https://www.getpostman.com/docs/v6/postman/mock_servers/intro_to_mock_servers) to return a predictable response.\n\nSend a request to this endpoint to view the mocked response, or view an example response under the **Examples** link.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "465c38e0-44c5-40ed-82c5-395ef87e4d69",
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"pm.environment.set(\"bitcoinRate\", jsonData.bpi.USD.rate);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "b7dbfe1f-537e-4e24-978a-54dc4f2ba3a8",
+					"responses": [
+						{
+							"id": "edd5abc3-5108-450a-b170-60821655e259",
+							"name": "Mocked endpoint",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"time\": {\n        \"updated\": \"Nov 19, 2018 20:25:00 UTC\",\n        \"updatedISO\": \"2018-11-19T20:25:00+00:00\",\n        \"updateduk\": \"Nov 19, 2018 at 20:25 GMT\"\n    },\n    \"disclaimer\": \"This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org\",\n    \"chartName\": \"Bitcoin\",\n    \"bpi\": {\n        \"USD\": {\n            \"code\": \"USD\",\n            \"symbol\": \"&#36;\",\n            \"rate\": \"5,003.4550\",\n            \"description\": \"United States Dollar\",\n            \"rate_float\": 5003.455\n        },\n        \"GBP\": {\n            \"code\": \"GBP\",\n            \"symbol\": \"&pound;\",\n            \"rate\": \"3,892.1176\",\n            \"description\": \"British Pound Sterling\",\n            \"rate_float\": 3892.1176\n        },\n        \"EUR\": {\n            \"code\": \"EUR\",\n            \"symbol\": \"&euro;\",\n            \"rate\": \"4,368.2164\",\n            \"description\": \"Euro\",\n            \"rate_float\": 4368.2164\n        }\n    }\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "cbab8226-4cef-487e-884f-371f0699b2c1",
+								"method": "GET",
+								"headers": "",
+								"url": "{{url}}/bitcoin",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Nov 2018 20:27:01 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a7-kIxN5L9H0YwilUQPUUio9A\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "4e5aa508-dd45-4fdd-9734-68fe9912358b",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "let jsonData = pm.response.json();\npm.environment.set(\"bitcoinRate\", jsonData.bpi.USD.rate);\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "58f1e1e2-f515-49d0-a60c-5a86a6da1ec4",
+					"name": "Create User",
+					"url": "http://localhost:3001/users",
+					"description": "The body must have `username`, `password` and `extra`. It returns `id_token` and `access_token` which are signed with the secret located at the `config.json` file. The `id_token` will contain the `username` and the `extra` information sent, while the `access_token` will contain the `audience`, `jti`, `issuer` and `scope`.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "13ff3f5b-5d26-47e5-8e74-4c5241ddb7c2",
+								"type": "text/javascript",
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"jwt_token\", response.access_token);"
+								]
+							}
+						}
+					],
+					"folder": "05c85e59-df01-42bf-936e-94f962ccfeea",
+					"responses": [
+						{
+							"id": "b7427b9b-3c5c-4d31-a76b-a8bfe7f84328",
+							"name": "Successful response",
+							"status": "Created",
+							"mime": "",
+							"language": "json",
+							"text": "{\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJleHRyYSI6ImJsZXJnIiwiaWQiOjIsImlhdCI6MTUzNjg3MTM0MiwiZXhwIjoxNTM2ODg5MzQyfQ.OWx1l_oDyuC7Oi0uO-iglA9quxxZ2ksX-BT2lqYjojY\",\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2dvbnRvLmNvbSIsImF1ZCI6Im5vZGVqcy1qd3QtYXV0aCIsImV4cCI6MTUzNjg3NDk0Miwic2NvcGUiOiJmdWxsX2FjY2VzcyIsInN1YiI6ImxhbGFsYW5kfGdvbnRvIiwianRpIjoiazJ4QXBOVVExWm1tQWdtcSIsImFsZyI6IkhTMjU2IiwiaWF0IjoxNTM2ODcxMzQyfQ.RTNmeyb-6mZpFEqQz0V194nKax91qJk5GN01u3hpA-Q\"}",
+							"responseCode": {
+								"code": 201,
+								"name": "Created",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "2384f445-ec8f-4a86-9212-b3a6d942bef7",
+								"method": "POST",
+								"headers": "Content-Type: application/json",
+								"dataMode": "raw",
+								"url": "http://localhost:3001/users",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"data": [],
+								"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\",\n\t\"extra\": \"blerg\"\n}"
+							},
+							"headers": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "523",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Sep 2018 20:42:22 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20b-/ULiXCB/BjV9XztkCrB50vUZugI\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookies": [],
+							"request": "58f1e1e2-f515-49d0-a60c-5a86a6da1ec4",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "const response = pm.response.json();\n\npm.environment.set(\"jwt_token\", response.access_token);",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\",\n\t\"extra\": \"blerg\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "65b5fcf0-be04-462a-b58d-79155fb79759",
+					"name": "Delete user",
+					"url": "http://localhost:3001/users",
+					"description": "The body must have `username`, `password` and `extra`. It returns `id_token` and `access_token` which are signed with the secret located at the `config.json` file. The `id_token` will contain the `username` and the `extra` information sent, while the `access_token` will contain the `audience`, `jti`, `issuer` and `scope`.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "efbbac18-4016-4c82-95b0-7dcd0669a770",
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"jwt_token\", response.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "73612cb4-fd1b-4021-bbfd-f88a061f0910",
+					"responses": [
+						{
+							"id": "98cbecd0-5e56-4070-91c0-e9d143e3834d",
+							"name": "Successful response",
+							"status": "Created",
+							"mime": "",
+							"language": "json",
+							"text": "{\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJleHRyYSI6ImJsZXJnIiwiaWQiOjIsImlhdCI6MTUzNjg3MTM0MiwiZXhwIjoxNTM2ODg5MzQyfQ.OWx1l_oDyuC7Oi0uO-iglA9quxxZ2ksX-BT2lqYjojY\",\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2dvbnRvLmNvbSIsImF1ZCI6Im5vZGVqcy1qd3QtYXV0aCIsImV4cCI6MTUzNjg3NDk0Miwic2NvcGUiOiJmdWxsX2FjY2VzcyIsInN1YiI6ImxhbGFsYW5kfGdvbnRvIiwianRpIjoiazJ4QXBOVVExWm1tQWdtcSIsImFsZyI6IkhTMjU2IiwiaWF0IjoxNTM2ODcxMzQyfQ.RTNmeyb-6mZpFEqQz0V194nKax91qJk5GN01u3hpA-Q\"}",
+							"responseCode": {
+								"code": 201,
+								"name": "Created",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "922a2826-98cc-4aec-ad9e-9f0ec3eaa365",
+								"method": "POST",
+								"headers": "Content-Type: application/json",
+								"dataMode": "raw",
+								"url": "http://localhost:3001/users",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"data": [],
+								"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\",\n\t\"extra\": \"blerg\"\n}"
+							},
+							"headers": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "523",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Sep 2018 20:42:22 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20b-/ULiXCB/BjV9XztkCrB50vUZugI\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookies": [],
+							"request": "65b5fcf0-be04-462a-b58d-79155fb79759",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "const response = pm.response.json();\n\npm.environment.set(\"jwt_token\", response.access_token);",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\",\n\t\"extra\": \"blerg\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "7201478f-94e7-4404-abf1-794c3c29104c",
+					"name": "Performance",
+					"url": "https://postman-echo.com/put",
+					"description": "This test is to validate the response time. This SNIPPET is also available on the right sidebar under `Response time is less than 200ms`.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a73bd267-ed06-453e-833d-3fb1bfa6d4c1",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "71f68c4f-fb6a-4a9f-8178-4723a212930e",
+							"name": "Performance",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {},\n    \"data\": \"This is expected to be sent back as part of response body.\",\n    \"files\": {},\n    \"form\": {},\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"content-length\": \"58\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"content-type\": \"text/plain\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"cc394095-6587-4079-bcba-3705b175115d\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"json\": null,\n    \"url\": \"https://postman-echo.com/put\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "cd67d541-ec3b-42d4-9272-0cb857b11290",
+								"method": "PUT",
+								"headers": "",
+								"dataMode": "raw",
+								"url": "https://postman-echo.com/put",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [],
+								"data": [],
+								"rawModeData": "This is expected to be sent back as part of response body."
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:34 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"235-EkrhuBWZKrBKKgRg6q6rJ7DOZ/o\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "set-cookie",
+									"value": "sails.sid=s%3AUuE9kqyAFxbvBvvH8aX3WEBLXiNgjK7-.ErzxoeVFY7HfTK%2BPjoOs%2BzaP3yU8%2BcM59adz0oo9LlA; Path=/; HttpOnly"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "7201478f-94e7-4404-abf1-794c3c29104c",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Response time is less than 200ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(200);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "This is expected to be sent back as part of response body.",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "790a2d87-5d88-4f4d-8f6f-861540b34aaf",
+					"name": "Bitcoin exchange rate",
+					"url": "https://api.coindesk.com/v1/bpi/currentprice.json",
+					"description": "CoinDesk provides a simple API to make its [Bitcoin Price Index (BPI)](https://www.coindesk.com/price/) data programmatically available to others. Data is returned in JSON format.\n\nRead more about the [Coindesk API](https://www.coindesk.com/api/).\n\nUnder the **Tests** tab in the Postman app, see how we extract data from the response, save it as a variable, so that we can use the information in subsequent requests. We will be using an environment to save this information. Make sure you have created and selected [an environment](https://www.getpostman.com/docs/v6/postman/environments_and_globals/intro_to_environments_and_globals), and then send this request.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d86a738-60e1-4f02-a0c7-8458ed80f9d6",
+								"exec": [
+									"// let's write code that extract information from the response, and then save it as an environment variable, so that we can use it in our next request.",
+									"",
+									"let jsonData = pm.response.json();",
+									"pm.environment.set(\"bitcoinRate\", jsonData.bpi.USD.rate);",
+									"",
+									"pm.test(\"Response includes specified elements\", function () {",
+									"    let response = pm.response.json();",
+									"    pm.expect(response).to.have.ownProperty(\"chartName\"); ",
+									"    pm.expect(response.chartName).to.equal(\"Bitcoin\");",
+									"});",
+									"",
+									"// you can also use global, collection, and session variables",
+									"// you can also set local variables which are available throughout a collection run",
+									"pm.variables.set(\"exampleLocalVariable\", \"this-example-of-a-local-variable\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "2743a9be-7e64-4f6d-8f47-4e47fc634a36",
+					"responses": [
+						{
+							"id": "0aaed44d-dccf-46a5-ab32-8f878c3be26d",
+							"name": "Bitcoin exchange rate",
+							"status": "OK",
+							"mime": "",
+							"language": "script",
+							"text": "{\"time\":{\"updated\":\"Nov 19, 2018 20:25:00 UTC\",\"updatedISO\":\"2018-11-19T20:25:00+00:00\",\"updateduk\":\"Nov 19, 2018 at 20:25 GMT\"},\"disclaimer\":\"This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org\",\"chartName\":\"Bitcoin\",\"bpi\":{\"USD\":{\"code\":\"USD\",\"symbol\":\"&#36;\",\"rate\":\"5,003.4550\",\"description\":\"United States Dollar\",\"rate_float\":5003.455},\"GBP\":{\"code\":\"GBP\",\"symbol\":\"&pound;\",\"rate\":\"3,892.1176\",\"description\":\"British Pound Sterling\",\"rate_float\":3892.1176},\"EUR\":{\"code\":\"EUR\",\"symbol\":\"&euro;\",\"rate\":\"4,368.2164\",\"description\":\"Euro\",\"rate_float\":4368.2164}}}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "e65571a2-4849-412f-8343-c19e2822dfbd",
+								"method": "GET",
+								"headers": "",
+								"url": "https://api.coindesk.com/v1/bpi/currentprice.json",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Type",
+									"value": "application/javascript"
+								},
+								{
+									"key": "Content-Length",
+									"value": "672"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=15"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Nov 2018 20:25:22 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 19 Nov 2018 20:26:07 UTC"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.12.1"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Fat-Free Framework"
+								},
+								{
+									"key": "Age",
+									"value": "2"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Hit from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 3566cbcd49f71967b52a565888e4d272.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "sS2RrgR1BnUjWPD6l_WQw-3GNk2xW7nbM2FMEISFO2c06_P3TjUEwQ=="
+								}
+							],
+							"cookies": [],
+							"request": "790a2d87-5d88-4f4d-8f6f-861540b34aaf",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "// let's write code that extract information from the response, and then save it as an environment variable, so that we can use it in our next request.\n\nlet jsonData = pm.response.json();\npm.environment.set(\"bitcoinRate\", jsonData.bpi.USD.rate);\n\npm.test(\"Response includes specified elements\", function () {\n    let response = pm.response.json();\n    pm.expect(response).to.have.ownProperty(\"chartName\"); \n    pm.expect(response.chartName).to.equal(\"Bitcoin\");\n});\n\n// you can also use global, collection, and session variables\n// you can also set local variables which are available throughout a collection run\npm.variables.set(\"exampleLocalVariable\", \"this-example-of-a-local-variable\");",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "7af4dfb2-b6c9-45df-a831-27c59df610e7",
+					"name": "JSON schema v4 validation",
+					"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+					"description": "A schema is simply a declaration describing the structure of data. Some teams use a specific schema and would like to validate their server responses against this schema. You can define a custom schema, and validate your your server responses against this schema.\n\nOne of the API tests that we previously talked about is validating that the response payloads returned from the server are well-formed. You can do that by making assertions that elements in the response match your expectations. \n\nReview the test written under the **Tests** tab to validate that response payloads returned from the server are well-formed. \n\nThis example uses [Tiny Validator for JSON Schema v4](http://geraintluff.github.io/tv4/). The Postman sandbox offers a built-in tv4 validator to simplify your assertions. Use [json-schema](http://json-schema.org/) [draft v4](http://json-schema.org/latest/json-schema-core.html) to validate simple values and complex objects using a rich [validation vocabulary](http://json-schema.org/latest/json-schema-validation.html) ([examples](http://json-schema.org/examples.html)).\n\n",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3a86bf59-c4cc-4a2e-8cd0-bd4c1df05da2",
+								"exec": [
+									"var schema = {",
+									"  \"items\": {",
+									"    \"type\": \"boolean\"",
+									"  }",
+									"};",
+									"",
+									"var data1 = [true, false];",
+									"var data2 = [true, 123];",
+									"",
+									"pm.test('Schema is valid', function() {",
+									"  pm.expect(tv4.validate(data1, schema)).to.be.true;",
+									"//   pm.expect(tv4.validate(data2, schema)).to.be.true; // this statement would not be true",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "95dee0da-bfcf-4e78-a26a-43717c43219c",
+							"name": "JSON schema v4",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AwJjqwuZdKqKOiQ9FVnzMr8QoFaPFxpfD.ldt8sflpZLQkRbE1yyJtcIZIuirLfn4yFsVxtvFolWY\",\n        \"postman-token\": \"9dd498fe-4233-4512-a506-974f85cab10d\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "f6cf11d5-f55e-4065-a6c9-2560d21bf691",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:26:56 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c7-KZYP4szBTzxKQXHzZuUzeRc6eu8\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "set-cookie",
+									"value": "sails.sid=s%3Azdvp_jvbvOB5mzzWKmS_7y6miNWal_a6.J5pGiESESIJ0CZLwvG9rF5Vsk4deBwxJhwo9E9JS4o8; Path=/; HttpOnly"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "7af4dfb2-b6c9-45df-a831-27c59df610e7",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "var schema = {\n  \"items\": {\n    \"type\": \"boolean\"\n  }\n};\n\nvar data1 = [true, false];\nvar data2 = [true, 123];\n\npm.test('Schema is valid', function() {\n  pm.expect(tv4.validate(data1, schema)).to.be.true;\n//   pm.expect(tv4.validate(data2, schema)).to.be.true; // this statement would not be true\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "7e6da9c5-a0f3-40b1-87f3-298a17863f0f",
+					"name": "Functional2",
+					"url": "https://postman-echo.com/delete",
+					"description": "Another example of bundling several assertions within a single test, and also of bundling several tests within a try-catch code block.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "27f2f637-fe9f-418e-be50-28099d3d8f68",
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"let jsonResponse = pm.response.json();",
+									"",
+									"pm.test(\"Response should be a parsable JSON\", function() {",
+									"    pm.expect(jsonResponse).to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response body should be an object\", function() {",
+									"    pm.expect(jsonResponse).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Response body should be in the correct format\", function() {",
+									"    pm.expect(jsonResponse.args).to.be.a('object');",
+									"    pm.expect(jsonResponse.data).to.be.a('string');",
+									"    pm.expect(jsonResponse.files).to.be.a('object');",
+									"    pm.expect(jsonResponse.form).to.be.a('object');",
+									"    pm.expect(jsonResponse.headers).to.be.a('object');",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "6e4bb555-c82b-4db4-91e1-916e2d6f6174",
+							"name": "Functional2",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {},\n    \"data\": \"This is expected to be sent back as part of response body.\",\n    \"files\": {},\n    \"form\": {},\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"content-length\": \"58\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"content-type\": \"text/plain\",\n        \"cookie\": \"sails.sid=s%3AG3Skk-KwKzhuN9bCFLG38XDvX_n76FY7.SnEQNLnssVB0vIWq0%2Bqn%2FoZhMdvJqAp6Toc8YMDlMhw\",\n        \"postman-token\": \"a26a6cbb-abb4-4e8b-8a1e-4ba63450afcb\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"json\": null,\n    \"url\": \"https://postman-echo.com/delete\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "6c58eba4-1ec9-4f84-8ae9-c29536cba705",
+								"method": "DELETE",
+								"headers": "",
+								"dataMode": "raw",
+								"url": "https://postman-echo.com/delete",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [],
+								"data": [],
+								"rawModeData": "This is expected to be sent back as part of response body."
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:22:22 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"236-unqr/LuiPP07B85WHuciASf+YdA\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "set-cookie",
+									"value": "sails.sid=s%3Aa9JaDxhKoLl3zyptDL3Vbo-kXgiIoqOY.o566AhO0IGGXbdop127kZi0Xq9bHd0q3RjrHgs2G9c4; Path=/; HttpOnly"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "415"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "7e6da9c5-a0f3-40b1-87f3-298a17863f0f",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"response is ok\", function () {\n    pm.response.to.have.status(200);\n});\n\nlet jsonResponse = pm.response.json();\n\npm.test(\"Response should be a parsable JSON\", function() {\n    pm.expect(jsonResponse).to.be.ok;\n});\n\npm.test(\"Response body should be an object\", function() {\n    pm.expect(jsonResponse).to.be.an('object');\n});\n\npm.test(\"Response body should be in the correct format\", function() {\n    pm.expect(jsonResponse.args).to.be.a('object');\n    pm.expect(jsonResponse.data).to.be.a('string');\n    pm.expect(jsonResponse.files).to.be.a('object');\n    pm.expect(jsonResponse.form).to.be.a('object');\n    pm.expect(jsonResponse.headers).to.be.a('object');\n});\n\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "This is expected to be sent back as part of response body.",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "7f71ddc1-1b6e-4bc9-8ca1-32a41a4dcf11",
+					"name": "Create Session",
+					"url": "http://localhost:3001/sessions/create",
+					"description": "The body must have `username` and `password`. It returns `id_token` and `access_token` are signed with the secret located at the `config.json` file. The `id_token` will contain the `username` and the `extra` information sent, while the `access_token` will contain the `audience`, `jti`, `issuer` and `scope`.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "noauth"
+					},
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4ee38453-d523-4d57-b0dc-a89badf95c1b",
+								"type": "text/javascript",
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"jwt_token\", response.access_token);"
+								]
+							}
+						}
+					],
+					"folder": "05c85e59-df01-42bf-936e-94f962ccfeea",
+					"responses": [
+						{
+							"id": "eece6fbb-2aa8-43fe-8297-2fc1f142635d",
+							"name": "Successful response",
+							"status": "Created",
+							"mime": "",
+							"language": "json",
+							"text": "{\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJleHRyYSI6ImJsZXJnIiwiaWQiOjIsImlhdCI6MTUzNjg3MTQ4MiwiZXhwIjoxNTM2ODg5NDgyfQ.ssLIBEyAF73iQQH7byi6OiXfa1r467wKx_VmfhjJSeY\",\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2dvbnRvLmNvbSIsImF1ZCI6Im5vZGVqcy1qd3QtYXV0aCIsImV4cCI6MTUzNjg3NTA4Miwic2NvcGUiOiJmdWxsX2FjY2VzcyIsInN1YiI6ImxhbGFsYW5kfGdvbnRvIiwianRpIjoiRVJmSVVoR2hmaUxNbDFFUyIsImFsZyI6IkhTMjU2IiwiaWF0IjoxNTM2ODcxNDgyfQ.isN1Pl40xa8Ml_8Alh6kcrqO6JvXCkXdCBx0IFeFzCc\"}",
+							"responseCode": {
+								"code": 201,
+								"name": "Created",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "04263253-bf92-4850-99aa-f3fb9a154710",
+								"method": "POST",
+								"headers": "Content-Type: application/json",
+								"dataMode": "raw",
+								"url": "http://localhost:3001/sessions/create",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"data": [],
+								"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\"\n}"
+							},
+							"headers": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "523",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Sep 2018 20:44:42 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20b-OddoFD1q11lfCJ55kXMN6jd5YHE\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookies": [],
+							"request": "7f71ddc1-1b6e-4bc9-8ca1-32a41a4dcf11",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "const response = pm.response.json();\n\npm.environment.set(\"jwt_token\", response.access_token);",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "{\n\t\"username\": \"user\",\n\t\"password\": \"password\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "8832562b-c87d-4f1d-b1d6-a742d8d74ee1",
+					"name": "Verify new item exists",
+					"url": "http://localhost:3002/items/{{itemId}}",
+					"description": "A `GET` to the `/items/:itemId` endpoint allows your application to retrieve details about the specified item.\n\nLook under **Examples** to view an example response.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"type": "text",
+							"value": "Bearer {{example_api_key}}"
+						},
+						{
+							"key": "Content-type",
+							"type": "text",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "35ad2ae5-6a8e-4d4b-ae02-ba7093b2fc7d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Item name is correct\", function () {",
+									"    let response = pm.response.json();",
+									"    let savedItemName = pm.environment.get(\"itemName\");",
+									"    pm.expect(response.name).to.be(savedItemName);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"responses": [
+						{
+							"id": "556d32c3-8faf-4161-b2f1-6bf6e463a06c",
+							"name": "Verify new item exists",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"item_id\": \"304832\",\n    \"name\": \"kabocha\",\n    \"price\": \"0.89\",\n    \"unit\": \"lb\",\n    \"currency\": \"USD\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "3f7c6791-94ff-4f1e-9377-f49fb6677a21",
+								"method": "GET",
+								"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json",
+								"url": "http://localhost:3002/items/{{itemId}}?Authorization=Bearer {{example_api_key}}&Content-type=application/json",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"headerData": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [],
+							"cookies": [],
+							"request": "8832562b-c87d-4f1d-b1d6-a742d8d74ee1",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Item name is correct\", function () {\n    let response = pm.response.json();\n    let savedItemName = pm.environment.get(\"itemName\");\n    pm.expect(response.name).to.be(savedItemName);\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "a7672183-1802-425f-b774-2ceb6d824b75",
+					"name": "Status",
+					"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+					"description": "This test is to validate the response status code. This SNIPPET is also available on the right sidebar under `Status code: Code in 200`.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4fe03007-c43b-4c7c-a06e-508c907c8e39",
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "53ecf58d-5950-428e-846e-6f019ae061e8",
+							"name": "Status",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "8f2b2ee4-acc3-47e7-a428-8b6139dca7ac",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "a7672183-1802-425f-b774-2ceb6d824b75",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"response is ok\", function () {\n    pm.response.to.have.status(200);\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "b0d93dcc-c125-4c3f-b527-862981bcf819",
+					"name": "Functional",
+					"url": "https://postman-echo.com/post",
+					"description": "This test is written to validate the server performed a function as expected.",
+					"data": [
+						{
+							"key": "someHash",
+							"value": "7654321",
+							"type": "text"
+						},
+						{
+							"key": "secondHash",
+							"value": "987654321asdfgh",
+							"type": "text"
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "72ae5136-aeaa-4217-b3dd-3f96dd1cd371",
+								"exec": [
+									"pm.test(\"Returns 7 char alphanumeric id\", function () {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.form.someHash).to.match(/^[a-z0-9]{7}$/);",
+									"});",
+									"",
+									"pm.test(\"Returns 15 char alhpanumeric id\", function () {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.form.secondHash).to.match(/^[a-z0-9]{15}$/);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3f95b8b6-3898-49c5-a79a-6de6622c4cbd",
+					"responses": [
+						{
+							"id": "0abb8d23-d716-4487-a022-45c71e2f6acc",
+							"name": "Functional",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {},\n    \"data\": \"\",\n    \"files\": {},\n    \"form\": {\n        \"someHash\": \"7654321\",\n        \"secondHash\": \"987654321asdfgh\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"content-length\": \"43\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"content-type\": \"application/x-www-form-urlencoded\",\n        \"cookie\": \"sails.sid=s%3AUuE9kqyAFxbvBvvH8aX3WEBLXiNgjK7-.ErzxoeVFY7HfTK%2BPjoOs%2BzaP3yU8%2BcM59adz0oo9LlA\",\n        \"postman-token\": \"e6a118ae-af47-4fb6-ac35-3cf2bcbafd00\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"json\": {\n        \"someHash\": \"7654321\",\n        \"secondHash\": \"987654321asdfgh\"\n    },\n    \"url\": \"https://postman-echo.com/post\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "c6b1d6d3-16a0-4800-86f3-52d8384d8c4a",
+								"method": "POST",
+								"headers": "",
+								"dataMode": "urlencoded",
+								"data": [
+									{
+										"key": "someHash",
+										"value": "7654321",
+										"type": "text"
+									},
+									{
+										"key": "secondHash",
+										"value": "987654321asdfgh",
+										"type": "text"
+									}
+								],
+								"url": "https://postman-echo.com/post",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": []
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:22:08 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"277-9d2jX3MwxfNYN4a9mHbeHYeuEMA\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "set-cookie",
+									"value": "sails.sid=s%3AG3Skk-KwKzhuN9bCFLG38XDvX_n76FY7.SnEQNLnssVB0vIWq0%2Bqn%2FoZhMdvJqAp6Toc8YMDlMhw; Path=/; HttpOnly"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "408"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "b0d93dcc-c125-4c3f-b527-862981bcf819",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Returns 7 char alphanumeric id\", function () {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.form.someHash).to.match(/^[a-z0-9]{7}$/);\n});\n\npm.test(\"Returns 15 char alhpanumeric id\", function () {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.form.secondHash).to.match(/^[a-z0-9]{15}$/);\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "b752c0e2-0e89-443d-8a92-d388f862d135",
+					"name": "pm.expect and pm.response",
+					"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+					"description": "Within the second parameter of the `pm.test()` function, you can use either `pm.response()` or `pm.expect()` to make your assertions. \n\nUnder the **Tests** tab in the Postman app, review the tests comparing and contrasting the 2 methods.\n\nThe `pm.expect()` generic assertion function relies on [Chai.js](https://www.chaijs.com/), a BDD / TDD assertion library for node. \n\n```\npm.test(\"Environment to be production\", function () {\n  pm.expect(pm.environment.get(\"env\")).to.equal(\"production\");\n});\n```\n\nYou can also use a 2nd optional parameter with the `pm.expect()` function to create a custom error message.\n\n```\npm.test(\"Using a custom error message\", function () {\n    pm.expect(false, 'nooo why fail??').to.be.ok;\n});\n```\n\nThe `pm.response()` method uses `pm.expect()` under the hood. Using `pm.response()` as your base assertion allows you to receive more specific error messages when debugging. Here are some [`pm.response()` methods](https://www.getpostman.com/docs/v6/postman/scripts/postman_sandbox_api_reference#response-assertion-api-in-test-scripts). Review the error messages under the **Test Results** tab to see the difference.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b915422d-20c9-4294-8a2d-16c47c4adf9a",
+								"exec": [
+									"// Note the difference in the test failure message under the **Test Results** tab when using pm.response vs. pm.expect",
+									"pm.test(\"Status code is 200 - pm.response\", function () {",
+									"    pm.response.to.have.status(201); // written to fail",
+									"});",
+									"",
+									"pm.test(\"Status code is 200 - pm.expect\", function () {",
+									"    pm.expect(pm.response.code).to.equal(201); //written to fail",
+									"});",
+									"",
+									"// Using a 2nd optional parameter with the pm.expect function to create a custom error message ",
+									"pm.test(\"Using a custom error message\", function () {",
+									"    pm.expect(false, 'nooo why fail??').to.be.ok;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3927437e-a828-49e7-a321-7c7fd5716a92",
+					"responses": [
+						{
+							"id": "e5e9bc0a-539e-47a0-a080-5f6bba771d09",
+							"name": "Status",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "e07f471a-74f2-4037-80d8-2b4139eeb8cb",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "b752c0e2-0e89-443d-8a92-d388f862d135",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "// Note the difference in the test failure message under the **Test Results** tab when using pm.response vs. pm.expect\npm.test(\"Status code is 200 - pm.response\", function () {\n    pm.response.to.have.status(201); // written to fail\n});\n\npm.test(\"Status code is 200 - pm.expect\", function () {\n    pm.expect(pm.response.code).to.equal(201); //written to fail\n});\n\n// Using a 2nd optional parameter with the pm.expect function to create a custom error message \npm.test(\"Using a custom error message\", function () {\n    pm.expect(false, 'nooo why fail??').to.be.ok;\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "c23dc715-edfa-4593-891b-e1434cfba97f",
+					"name": "Add item to cart",
+					"url": "http://localhost:3002/{{memberId}}/cart",
+					"description": "A `POST` to the `/:memberId/cart` endpoint allows your application to add an item to the specified member's cart. \n\nLook under **Examples** to view an example response.",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Authorization",
+							"type": "text",
+							"value": "Bearer {{example_api_key}}"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6a85954b-d183-4873-94bb-7270ff7b0ec7",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Successful add status response\", function () {",
+									"    let response = pm.response.json();",
+									"    pm.expect(response.status).to.equal(\"item added\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"responses": [
+						{
+							"id": "13d24623-f4fe-4547-949d-bacd7654f177",
+							"name": "Add item to cart",
+							"status": "Created",
+							"mime": "",
+							"language": "json",
+							"text": "{\n\t\"cart_id\": \"109\",\n\t\"status\": \"item added\"\n}",
+							"responseCode": {
+								"code": 201,
+								"name": "Created",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "c33d2451-e570-42a8-adb1-f6962eb52af7",
+								"method": "POST",
+								"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json",
+								"dataMode": "raw",
+								"url": "http://localhost:3002/{{memberId}}/cart?Authorization=Bearer {{example_api_key}}&Content-type=application/json",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"headerData": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"data": [],
+								"rawModeData": ""
+							},
+							"headers": [],
+							"cookies": [],
+							"request": "c23dc715-edfa-4593-891b-e1434cfba97f",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 201\", function () {\n    pm.response.to.have.status(201);\n});\n\npm.test(\"Successful add status response\", function () {\n    let response = pm.response.json();\n    pm.expect(response.status).to.equal(\"item added\");\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"rawModeData": "",
+					"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "dcffc35a-abec-4ca0-abb6-9d3dcb5cb77f",
+					"name": "Verify item removed",
+					"url": "http://localhost:3002/{{memberId}}/cart",
+					"description": "A `GET` to the `:memberId/cart` endpoint allows you to retrieve a list of all items in the specified member's cart.\n\nLook under **Examples** to view an example response.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"type": "text",
+							"value": "Bearer {{example_api_key}}"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json",
+							"type": "text"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1b7ef90d-ffe4-4446-8cc0-bbed382afd84",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Cart does not include deleted item\", function () {",
+									"    let savedItemId = pm.environment.get(\"itemId\");",
+									"    pm.response.to.not.include(savedItemId);    ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "92ce876f-fe71-42e5-abcf-1d0ecf91fd12",
+					"responses": [
+						{
+							"id": "7b61be5b-2642-4af5-802a-e8083352945c",
+							"name": "Verify item removed",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n\t\"member_id\": \"5489098\",\n\t\"cart_id\": \"109\",\n\t\"items\": [\n\t\t{\n\t\t\t\"item_id\": \"304832\",\n\t\t\t\"quantity\": \"1\"\n\t\t},\n\t\t{\n\t\t\t\"item_id\": \"304836\",\n\t\t\t\"quantity\": \"2\"\n\t\t}\n\t],\n\t\"subtotal\": \"2.09\",\n\t\"tax\": \"0.03\",\n\t\"freight\": \"0.05\",\n\t\"total\": \"2.27\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "b437b705-6e6f-4e86-b39b-6ed7c7618e97",
+								"method": "GET",
+								"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json",
+								"url": "http://localhost:3002/{{memberId}}/cart?Authorization=Bearer {{examples_api_key}}&Content-type=application/json",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{examples_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"headerData": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{example_api_key}}"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [],
+							"cookies": [],
+							"request": "dcffc35a-abec-4ca0-abb6-9d3dcb5cb77f",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Cart does not include deleted item\", function () {\n    let savedItemId = pm.environment.get(\"itemId\");\n    pm.response.to.not.include(savedItemId);    \n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "Authorization: Bearer {{example_api_key}}\nContent-type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ea727293-b92a-4372-940e-a5ff350a636c",
+					"name": "Protected Random Quote",
+					"url": "http://localhost:3001/api/protected/random-quote",
+					"description": "It returns a String with a Random quote from Chuck Norris. It requires authentication. \n\nThe JWT - `access_token` must be sent on the `Authorization` header as follows: `Authorization: Bearer {jwt}`",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Authorization",
+							"value": "Bearer {{jwt_token}}",
+							"description": "Replace {{jwt_token}} with your JWT token."
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46bbbbc8-a93c-4894-b96a-07979323aec6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Response is a string\", function () {",
+									"    pm.response.to.be.string;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "8f673573-0122-4199-aa5d-30de94a79b84",
+					"responses": [
+						{
+							"id": "7f12c290-7fd5-427a-aa3e-75f34f7468ab",
+							"name": "Protected Random Quote",
+							"status": "OK",
+							"mime": "",
+							"language": "html",
+							"text": "Chuck Norris's tears cure cancer ..... too bad he has never cried",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "449cc345-7c00-454c-aeed-a72eaa5b9a2d",
+								"method": "GET",
+								"headers": "Content-Type: application/json\nAuthorization: Bearer {{jwt_token}}",
+								"url": "http://localhost:3001/api/protected/random-quote",
+								"pathVariableData": [],
+								"queryParams": [],
+								"headerData": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"description": "Replace {{jwt_token}} with your JWT token."
+									}
+								],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-h+wcZh2eGYail4Kdu43XrGBYjS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Nov 2018 23:28:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "ea727293-b92a-4372-940e-a5ff350a636c",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 200ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(200);\n});\n\npm.test(\"Response is a string\", function () {\n    pm.response.to.be.string;\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "Content-Type: application/json\nAuthorization: Bearer {{jwt_token}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "f0ce500e-a514-4f88-9561-b15d339c1fac",
+					"name": "Echo the exchange rate",
+					"url": "https://postman-echo.com/get?foo1={{bitcoinRate}}",
+					"description": "This request will use information saved to a variable in a previous request.",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "{{bitcoinRate}}",
+							"description": "Set this variable in the previous request"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "66566096-a5cb-417d-8228-fcdfd1d871bc",
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "b7dbfe1f-537e-4e24-978a-54dc4f2ba3a8",
+					"responses": [
+						{
+							"id": "9dde9916-7144-4465-818c-d411a918b3cf",
+							"name": "Status",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "39c091b4-6343-492e-8af4-596189f8c258",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "f0ce500e-a514-4f88-9561-b15d339c1fac",
+							"collection": "9d4627ee-4906-4d80-8432-fbd3b8391cdf"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "pm.test(\"response is ok\", function () {\n    pm.response.to.have.status(200);\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9d4627ee-4906-4d80-8432-fbd3b8391cdf",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "c63b8d6d-830c-4e79-b9c7-b7f702e5e7ad",
+			"name": "Company 4",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [],
+			"folders_order": [
+				"4698ad62-b76e-4ea3-8fdf-c467e2f9a076"
+			],
+			"protocolProfileBehavior": {},
+			"folders": [
+				{
+					"id": "4698ad62-b76e-4ea3-8fdf-c467e2f9a076",
+					"name": "Test get all",
+					"description": "Oh goody. Did you ever think you would get so excited to read this section title?\n\nThe [Postman Sandbox](https://www.getpostman.com/docs/v6/postman/scripts/postman_sandbox) is a JavaScript execution environment that is accessible during pre-request scripts and test scripts. Whatever code you write under the pre-request and test tabs is executed in this sandbox.\n\nAny code that you write under the **Tests** tab in the Postman app will execute after your request. Consequently you have access to the `pm.response` object to make assertions against the actual response -- this is what we call a Postman test.\n\nReview the example tests under the **Tests** tab in the Postman app.\n\n> **Quick tips for syntax**\n- Give each test a descriptive name. When the test fails, this will provide context to the error.\n- Use `pm.response()` as your base assertion where possible to provide more descriptive error messages.\n- Use the optional 2nd parameter in `pm.expect()` to create custom error messages.",
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "384e7b7d-95c5-4441-9301-1c296a7e3fb7",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e7f7c92-8909-4db5-b6eb-b33e2db42ea4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"collection": "c63b8d6d-830c-4e79-b9c7-b7f702e5e7ad",
+					"folder": null,
+					"order": [
+						"2cc32b98-5866-4821-8b74-7a7bb1ba8669"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "c63b8d6d-830c-4e79-b9c7-b7f702e5e7ad",
+					"folderId": "4698ad62-b76e-4ea3-8fdf-c467e2f9a076"
+				}
+			],
+			"requests": [
+				{
+					"id": "2cc32b98-5866-4821-8b74-7a7bb1ba8669",
+					"name": "Get_all.test",
+					"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+					"description": "In the Postman app, review the tests written under the **Tests** tab in the request builder on the top. Send this request, and view the results of the tests under the **Tests** tab in the response viewer on the bottom.\n\n### The `pm.*` API\n\nUse the `pm.*` API to write your test under the **Tests** tab in Postman. The `pm.test()` method accepts 2 parameters. The first parameter is the name of the test, so it's important to give your test a descriptive name to provide more information in case the test fails. The second parameter is a function whereby if any assertions within your function fail, then the test will fail.\n\n```\npm.test(\"Name of the second test\", function () {\n    // make as many assertions as you'd like as part of this test\n    // if any assertion throws an error, this test will fail\n    pm.response.to.have.status(200);\n    pm.response.to.be.ok;\n    pm.response.to.be.json;\n});\n```",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5efcb1fe-7ffe-42a3-a0c4-ba1e057a1e11",
+								"exec": [
+									"// use the `pm.*` API to write your test",
+									"// the `pm.test()` method accepts 2 parameters",
+									"// the first parameter is the name of your test (be descriptive)",
+									"// the second parameter is a function whereby if any assertions within your function fail, then the test will fail",
+									"",
+									"pm.test(\"Name of the first test\", function () {",
+									"    // make an assertion",
+									"    // if your assertion throws an error, this test will fail",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Name of the second test\", function () {",
+									"    // make as many assertions as you'd like as part of this test",
+									"    // if any assertion throws an error, this test will fail",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "4698ad62-b76e-4ea3-8fdf-c467e2f9a076",
+					"responses": [
+						{
+							"id": "7441dbd5-6b66-4f8e-a139-0d16b28536fb",
+							"name": "Status",
+							"status": "OK",
+							"mime": "",
+							"language": "json",
+							"text": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}",
+							"responseCode": {
+								"code": 200,
+								"name": "OK",
+								"detail": ""
+							},
+							"requestObject": {
+								"id": "3320c738-72d1-4f34-9197-da3722fceaa8",
+								"method": "GET",
+								"headers": "",
+								"url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+								"pathVariableData": [],
+								"queryParams": [
+									{
+										"key": "foo1",
+										"value": "bar1"
+									},
+									{
+										"key": "foo2",
+										"value": "bar2"
+									}
+								],
+								"headerData": [],
+								"dataMode": null,
+								"data": null
+							},
+							"headers": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookies": [],
+							"request": "2cc32b98-5866-4821-8b74-7a7bb1ba8669",
+							"collection": "c63b8d6d-830c-4e79-b9c7-b7f702e5e7ad"
+						}
+					],
+					"preRequestScript": null,
+					"tests": "// use the `pm.*` API to write your test\n// the `pm.test()` method accepts 2 parameters\n// the first parameter is the name of your test (be descriptive)\n// the second parameter is a function whereby if any assertions within your function fail, then the test will fail\n\npm.test(\"Name of the first test\", function () {\n    // make an assertion\n    // if your assertion throws an error, this test will fail\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Name of the second test\", function () {\n    // make as many assertions as you'd like as part of this test\n    // if any assertion throws an error, this test will fail\n    pm.response.to.have.status(200);\n    pm.response.to.be.ok;\n    pm.response.to.be.json;\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "c63b8d6d-830c-4e79-b9c7-b7f702e5e7ad",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "e91e5f6f-e6f1-4149-bebd-b92600d4d426",
+			"name": "json",
+			"values": []
+		},
+		{
+			"id": "bd630378-15ac-4df1-b9fb-84c87596b924",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}

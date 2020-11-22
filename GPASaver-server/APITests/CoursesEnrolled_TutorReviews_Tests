@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "2b9a97ef-d864-4ec0-94ca-4e9401f1349d",
+		"name": "Get_Courses_Enrolled_And_Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "coms-510-04.cs.iastate.edu/Get_tutor_reviews.php?tutorid=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b7dadd9e-450c-4cea-a368-807ff0ff0222",
+						"exec": [
+							"pm.test(\"Status test\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Body contains string\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"feedback\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Test array properties\", () => {\r",
+							"    //errors array is empty\r",
+							"  pm.expect(pm.response.text()).is.not.null;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains string\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"Poor\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains string\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"feedback for leon\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu/Get_tutor_reviews.php?tutorid=1",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"path": [
+						"Get_tutor_reviews.php"
+					],
+					"query": [
+						{
+							"key": "tutorid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "coms-510-04.cs.iastate.edu/Get_courses_enrolled.php?id=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e003720d-025b-4fd4-8852-94347e032c15",
+						"exec": [
+							"pm.test(\"Status test\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Body contains course_id\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"course_id\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains Full_name\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"full_name\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains Course_name\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"course_name\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Test array properties\", () => {\r",
+							"    //errors array is empty\r",
+							"  pm.expect(pm.response.text()).is.not.null;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains tutor\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"Leon Olivier\");\r",
+							"});\r",
+							"pm.test(\"Body contains course id 1\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"1\");\r",
+							"});\r",
+							"pm.test(\"Body contains course_name\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"English\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains course\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"Object-oriented Programming\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu/Get_courses_enrolled.php?id=1",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"path": [
+						"Get_courses_enrolled.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "f996bf08-bde6-4d41-bfaf-900207926904",
+		"name": "CS510-Company4",
+		"description": "This is the API collection for Company4 server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tutor Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44e0bf6c-a203-44d4-84b6-b2c59c1e84a7",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body status should be 0\", function () { ",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.status).to.eql(0);",
+							"});",
+							"",
+							"pm.test(\"response body should contain is_tutor variable\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"is_tutor\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"is_tutor for user00001 is true\", () => {",
+							"  const responseJson = pm.response.json();",
+							"  pm.expect(responseJson.is_tutor).to.eql(\"1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user00001\",\n    \"password\": \"user00001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/login.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"login.php"
+					]
+				},
+				"description": "Post request for tutor login"
+			},
+			"response": []
+		},
+		{
+			"name": "Student Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e2f18fe-5818-4afc-a70d-fdeae762fe4d",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body status should be 0\", function () { ",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.status).to.eql(0);",
+							"});",
+							"",
+							"pm.test(\"response body should contain is_tutor variable\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"is_tutor\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"is_tutor for user00001 is false\", () => {",
+							"  const responseJson = pm.response.json();",
+							"  pm.expect(responseJson.is_tutor).to.eql(\"0\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user00002\",\n    \"password\": \"user00002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/login.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"login.php"
+					]
+				},
+				"description": "Post request for student login"
+			},
+			"response": []
+		},
+		{
+			"name": "Failed Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5340bb99-af9b-45f2-ae39-c5b3f8795a0d",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body status should be 2\", function () { ",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.status).to.eql(2);",
+							"});",
+							"",
+							"pm.test(\"respinse body should contain error message\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"message\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/login.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"login.php"
+					]
+				},
+				"description": "Post request for failed login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "beeff171-eb4c-45b0-8e69-7b52a2999952",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain multiple tutors\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody([Array(24)]); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/get_tutor.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"get_tutor.php"
+					]
+				},
+				"description": "Get request for tutor"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutee List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "90bde278-85a5-4f8f-8b18-319874486c1e",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain an array of tutees\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody([Array(1)]); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/get_tutee_list.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"get_tutee_list.php"
+					]
+				},
+				"description": "Get request for Tutees"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutor Availability",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c873c6d1-fb3d-4d11-952d-972ddd003af4",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain 1 availability time for this tutor and this course\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody([Array(1)]); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/get_availability.php?tutorid=1&courseid=1",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"get_availability.php"
+					],
+					"query": [
+						{
+							"key": "tutorid",
+							"value": "1"
+						},
+						{
+							"key": "courseid",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Get request for tutor availability"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutor for course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d546be25-18ef-4b9b-8cf0-5e4e017a6957",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain an array of tutors for this course\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody([Array(2)]); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/get_course_tutors.php?courseid=1",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"get_course_tutors.php"
+					],
+					"query": [
+						{
+							"key": "courseid",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Get Request for tutors who are available for my course"
+			},
+			"response": []
+		},
+		{
+			"name": "Request Tutor-Story 915",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0fc9a1d4-8958-4d02-88f4-f18c9a7835af",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body status should be 0\", function () { ",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.status).to.eql(0);",
+							"});",
+							"",
+							"pm.test(\"response body should contain message variable\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"message\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userid\": 1,\n    \"tutorid\": 19,\n    \"courseid\": \"2\",\n    \"date\": \"2020-11-25\",\n    \"ftime\": \"2020-11-25 9:0:00\",\n    \"etime\": \"2020-11-25 9:55:00\",\n    \"cost\": 20.166667938232422\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/request_tutor.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"request_tutor.php"
+					]
+				},
+				"description": "Post request for requesting a tutor"
+			},
+			"response": []
+		},
+		{
+			"name": "Request Tutor Failed-Story 915",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4931d43-a7ce-4322-bda7-ec10ec28e338",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body status should be 1\", function () { ",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.status).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"response body should contain message variable\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"message\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userid\": 1,\n    \"tutorid\": 19,\n    \"courseid\": \"2\",\n    \"date\": \"2020-11-25\",\n    \"ftime\": \"2020-11-25 9:0:00\",\n    \"etime\": \"2020-11-25 9:55:00\",\n    \"cost\": 20.166667938232422\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/request_tutor.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"request_tutor.php"
+					]
+				},
+				"description": "Wrong body to test the error handling"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request Tutor-Story 964",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9bdef815-629c-4798-9362-564b24f84ac7",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body status should be 0\", function () { ",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.status).to.eql(0);",
+							"});",
+							"",
+							"pm.test(\"response body should contain message variable\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"message\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userid\": 1,\n    \"tutorid\": 4,\n    \"courseid\": \"2\",\n    \"date\": \"2020-11-3\",\n    \"approved\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/update_request_tutor.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"update_request_tutor.php"
+					]
+				},
+				"description": "Update approve/deny for requests"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutor Requests-Story 964",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f1b4a22-1ae8-4b41-b9bf-4a9f2d0f1c18",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain 17 tutor requests\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody([Array(17)]); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu/tutor_requests.php",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"path": [
+						"tutor_requests.php"
+					]
+				},
+				"description": "Get all Tutor Requests"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutored Classes-Story 916",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95918f19-f8ec-4082-8060-fc95fa7307e4",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain 11 tutored classes\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody([Array(11)]); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/list_tutored_classes.php?id=1",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"list_tutored_classes.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Get request for all Classes the user being tutored"
+			},
+			"response": []
+		},
+		{
+			"name": "Withdrawing from Tutoring-Story 916",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8bb15318-b630-4dba-88b2-70e5c9cfd15d",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok; ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"response body should contain a message for request result\", () => {",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(String); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "coms-510-04.cs.iastate.edu:80/delete_tutor_request.php?id=1&course=10&tutor=20",
+					"host": [
+						"coms-510-04",
+						"cs",
+						"iastate",
+						"edu"
+					],
+					"port": "80",
+					"path": [
+						"delete_tutor_request.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "course",
+							"value": "10"
+						},
+						{
+							"key": "tutor",
+							"value": "20"
+						}
+					]
+				},
+				"description": "Delete request for RequestTutor"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
