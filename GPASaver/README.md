@@ -1,16 +1,8 @@
-**GPASaver**
+**Executive Summary**
+
+It’s very important for students to earn good grades in college. Students must pass their classes to earn credits. Moreover, a good GPA help the student apply for scholarships, get internships, and apply for a graduate school. One way to raise GPA is to get help from professors and TAs, however, they might not provide enough help due to limit of time. There are more than thirty-thousand students at Iowa State University, which means there will be high requests for students who need help from more professional people to keep or raise their GPA. GPASaver is a local tutoring android application only built for Iowa State University students. This application is different from other tutoring applications, the tutors in this application are more specialized since most of them took the exact or relative courses at ISU. In addition, it is more convenient for students and tutors to meet face to face. This application aims to provide a platform for students to find best-matched tutors and students who want to become tutors get more tutoring experiences and earn extra income.  
 
 
-Here is a list of Android development tools and resources that will hopefully help everyone:
+**Product Description**
 
-1.  [CodingWithMitch](https://www.youtube.com/watch?v=qpJRgr6HzAw&list=PLgCYzUzKIBE9XqkckEJJA0I1wVKbUAOdv) This Youtube channel is amazing.
-2.  Firebase: https://hackernoon.com/introduction-to-firebase-218a23186cd7
-3.  Material UI is Android's new "standard" for layouts: https://android.jlelse.eu/material-design-for-android-523996401fc1
-4.  https://github.com/wasabeef/awesome-android-ui
-
-KickStarter open sourced their android app. There aren't many examples of android TDD projects out there, and this one is one of the best.
-The code doesn't make a lot of sense at first, but since they follow TDD, looking at the test classes first makes it much easier to follow.
-They also use the Model-View-ViewModel design pattern: https://github.com/kickstarter/android-oss
-
-# Company1_
-
+The GPASaver application is a tutoring application that will help students search for right tutors. The system will recommend tutors to students based on their majors and classes. After evaluating the tutors’ ratings, hourly rates, reviews, etc., the student will choose one to chat and request for tutoring. The students who want to become tutors are required to submit the classes’ names with grades or subjects which they want to tutor, they might provide their transcripts and GPA to get approved. When the students become tutors, tutor figures will be shown on their personal page. The tutors can set the schedules for students to choose. They can also accept or reject the tutoring requests from students. This application also provides an online payment system for students and tutors which will make the transactions more secure. The student will get a bill from tutor after their appointment. Once the student pays the bill, the tutor will get the payment. The student can also rate and write a review to the tutor, and the rating and review will be calculated and shown on the tutor’s page.  
