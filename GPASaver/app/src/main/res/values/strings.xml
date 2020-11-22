@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">GPASaver</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="back">Back</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_having_account">Already Having an Account?</string>
+    <string name="log_in">Log In</string>
+    <string name="not_having_account">Not Having an Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="logout">Logout</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="requests">Requests</string>
+    <string name="menu_tutor">Tutor</string>
+    <string name="menu_request_tutor">Request Tutor</string>
+    <string name="menu_review">Review</string>
+    <string name="click_to_accept_or_reject_request_from">Click to Accept or Reject request from:</string>
+    <string name="image_of_requesting_user">Image of requesting user</string>
+    <string name="tutee">tutee</string>
+    <string name="image_of_tutee">image_of_tutee</string>
+    <string name="COMS410">COMS410</string>
+
+    <string-array name="courses">
+        <item>Object-oriented Programming</item>
+        <item>Data Structure</item>
+        <item>C for Programmers</item>
+        <item>Python for Programmers</item>
+        <item>Software Testing</item>
+        <item>English Reading</item>
+        <item>English Writing</item>
+        <item>English Speaking</item>
+        <item>High School Algebra</item>
+        <item>Calculus</item>
+        <item>Trigonometry</item>
+        <item>Linear Algebra</item>
+        <item>Classicl Mechanics</item>
+        <item>Electricity and Magnetism</item>
+    </string-array>
+
+    <string-array name="tutors">
+        <item>Leon Olivier</item>
+        <item>Willie Hart</item>
+        <item>Ismail Corneliussen</item>
+        <item>Sander Hansen</item>
+        <item>John Vis</item>
+        <item>David Cooper</item>
+        <item>Edger Thomas</item>
+        <item>Adem King</item>
+        <item>Luke Smith</item>
+        <item>Chris Sanz</item>
+        <item>Sanni Seppanen</item>
+        <item>Ella Laine</item>
+        <item>Sofie Andersen</item>
+        <item>Sonia Gomez</item>
+        <item>Barb Wade</item>
+        <item>Kim Lee</item>
+        <item>Susan Chang</item>
+        <item>Beth Smythe</item>
+        <item>Eva Li</item>
+        <item>Vilma Halko</item>
+    </string-array>
+    <string name="title_activity_my_requests">My Requests</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>

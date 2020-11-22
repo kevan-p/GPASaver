@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_home"
+      android:icon="@drawable/ic_menu_camera"
+      android:title="@string/menu_home" />
+
+    <item
+        android:id="@+id/nav_class"
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        android:title="My Classes"
+        />
+
+    <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="My Profile"
+            />
+
+    <item
+        android:id="@+id/nav_requests"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="@string/requests" />
+
+    <item
+            android:id="@+id/nav_tutee"
+            android:icon="@drawable/ic_baseline_format_list_numbered_24"
+            android:title="Tutees" />
+
+
+    <item
+        android:id="@+id/nav_tutor"
+        android:icon="@drawable/ic_baseline_people_24"
+        android:title="@string/menu_tutor"
+        />
+
+
+    <item
+            android:id="@+id/nav_search_tutor"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="Search Tutor"
+            />
+    <item
+        android:id="@+id/nav_cancel_tutor"
+        android:icon="@drawable/ic_baseline_person_remove_24"
+        android:title="Cancel Tutor"
+        />
+
+    <item
+        android:id="@+id/nav_review"
+        android:icon="@drawable/ic_rate_review_black_24dp"
+        android:title="@string/menu_review"
+        />
+    <item
+        android:id="@+id/Tutor_reviews"
+        android:icon="@drawable/ic_course"
+        android:title="Reply"
+        />
+    <item
+        android:id="@+id/nav_admin_view"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Admin" />
+  </group>
+
+  <item android:title="Communicate">
+    <menu>
+      <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/menu_share" />
+      <item
+        android:id="@+id/nav_send"
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/menu_send" />
+    </menu>
+  </item>
+
+</menu>

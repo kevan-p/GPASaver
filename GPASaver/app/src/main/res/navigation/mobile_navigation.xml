@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@+id/mobile_navigation"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  app:startDestination="@id/nav_home">
+
+  <fragment
+    android:id="@+id/nav_home"
+    android:name="com.company1.gpasaver.ui.home.HomeFragment"
+    android:label="@string/menu_home"
+    tools:layout="@layout/fragment_home" >
+    <action
+      android:id="@+id/action_nav_home_to_nav_gallery"
+      app:destination="@id/nav_profile" />
+    <action
+        android:id="@+id/action_nav_home_to_nav_requests"
+        app:destination="@id/nav_requests" />
+    <action
+            android:id="@+id/action_nav_home_to_nav_tutee"
+            app:destination="@id/nav_tutee" />
+    <action
+        android:id="@+id/action_nav_home_to_nav_classes"
+        app:destination="@id/nav_class" />
+    <action
+        android:id="@+id/action_nav_home_to_nav_reply"
+        app:destination="@id/nav_reply" />
+    <action
+        android:id="@+id/action_nav_home_to_replyFragment"
+        app:destination="@id/nav_reply" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/nav_profile"
+    android:name="com.company1.gpasaver.ui.profile.ProfileFragment"
+    android:label="@string/menu_profile"
+    tools:layout="@layout/fragment_profile" >
+    <action
+      android:id="@+id/action_nav_gallery_to_nav_my_profile"
+      app:destination="@id/nav_slideshow" />
+  </fragment>
+
+  <fragment
+          android:id="@+id/nav_my_profile"
+          android:name="com.company1.gpasaver.ui.profile.MyProfile"
+          android:label="@string/menu_profile"
+          tools:layout="@layout/activity_my_profile" >
+    <action
+            android:id="@+id/action_nav_my_profile_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/nav_slideshow"
+    android:name="com.company1.gpasaver.ui.slideshow.SlideshowFragment"
+    android:label="@string/menu_slideshow"
+    tools:layout="@layout/fragment_slideshow" >
+    <action
+      android:id="@+id/action_nav_slideshow_to_nav_tools"
+      app:destination="@id/nav_tools" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/nav_tools"
+    android:name="com.company1.gpasaver.ui.tools.ToolsFragment"
+    android:label="@string/menu_tools"
+    tools:layout="@layout/fragment_tools" >
+    <action
+      android:id="@+id/action_nav_tools_to_nav_share"
+      app:destination="@id/nav_tutor" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/nav_tutor"
+      android:name="com.company1.gpasaver.ui.tutor.TutorFragment"
+      android:label="@string/menu_tutor"
+      tools:layout="@layout/activity_tutor" >
+    <action
+        android:id="@+id/action_nav_tutor_to_nav_request_tutor"
+        app:destination="@id/nav_search_tutor" />
+  </fragment>
+
+
+  <fragment
+          android:id="@+id/nav_search_tutor"
+          android:name="com.company1.gpasaver.FindTutorActivity"
+          android:label="@string/menu_request_tutor"
+          tools:layout="@layout/activity_find_tutor" >
+    <action
+            android:id="@+id/action_nav_search_tutor_to_nav_review"
+            app:destination="@id/nav_review" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/nav_review"
+      android:name="com.company1.gpasaver.ui.review.ReviewFragment"
+      android:label="@string/menu_review"
+      tools:layout="@layout/activity_review" >
+    <action
+        android:id="@+id/action_nav_review_to_nav_share"
+        app:destination="@id/nav_share" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/nav_share"
+    android:name="com.company1.gpasaver.ui.share.ShareFragment"
+    android:label="@string/menu_share"
+    tools:layout="@layout/fragment_share" >
+    <action
+      android:id="@+id/action_nav_share_to_nav_send"
+      app:destination="@id/nav_send" />
+  </fragment>
+
+// added tutorreviewsfragment to navigation
+<fragment
+      android:id="@+id/Tutor_reviews"
+      android:name="com.company1.gpasaver.ui.review.TutorReviewsFragment"
+      android:label="Tutor Reviews"
+      tools:layout="@layout/activity_tutorreviews" >
+    <action
+        android:id="@+id/action_nav_review_to_nav_share"
+        app:destination="@id/nav_share" />
+  </fragment>
+  
+  <fragment
+    android:id="@+id/nav_send"
+    android:name="com.company1.gpasaver.ui.send.SendFragment"
+    android:label="@string/menu_send"
+    tools:layout="@layout/fragment_send" />
+  <fragment
+      android:id="@+id/nav_requests"
+      android:name="com.company1.gpasaver.ui.requests.RequestsFragment"
+      android:label="Requests"
+      tools:layout="@layout/fragment_requests" />
+  <fragment
+          android:id="@+id/nav_tutee"
+          android:name="com.company1.gpasaver.ui.tutee.TuteeFragment"
+          android:label="TuteeFragment" />
+  <fragment
+      android:id="@+id/nav_class"
+      android:name="com.company1.gpasaver.ui.myClasses.MyClassesFragment"
+      android:label="My Classes" />
+  <fragment
+      android:id="@+id/nav_admin_view"
+      android:name="com.company1.gpasaver.AdminViewActivity"
+      android:label="AdminViewActivity"
+      tools:layout="@layout/admin_view"/>
+  <fragment
+      android:id="@+id/nav_cancel_tutor"
+      android:name="com.company1.gpasaver.ui.cancelTutor.ScrollingFragment"
+      android:label="Cancel Tutor"
+      tools:layout="@layout/fragment_scrolling"
+      />
+  <fragment
+      android:id="@+id/nav_reply"
+      android:name="com.company1.gpasaver.ui.reply.ReplyFragment"
+      android:label="Reply" />
+</navigation>

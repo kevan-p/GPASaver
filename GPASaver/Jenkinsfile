@@ -1,0 +1,23 @@
+pipeline {
+	agent any   
+	stages {
+        stage('Build') { 
+            steps {
+                sh './gradlew build'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './gradlew test'
+            }
+        }
+    }
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+            cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+            step([$class: 'FindBugsPublisher', pattern: 'target/findbugsXml.xml'])
+            step([$class: 'PmdPublisher', pattern: 'target/pmd.xml'])
+        }
+    }
+}

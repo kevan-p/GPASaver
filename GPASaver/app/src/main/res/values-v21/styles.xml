@@ -1,0 +1,10 @@
+<resources>
+
+  <!-- For devices with API 21 or greater. No idea why they are seperate
+        since API 21 was forever ago... -->
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:statusBarColor">@color/colorAccent</item>
+  </style>
+</resources>

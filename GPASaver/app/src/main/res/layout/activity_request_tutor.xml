@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".requestTutor"
+        android:background="@drawable/tutor_bg">
+
+
+    <TextView
+        android:id="@+id/ViewUserID"
+        android:layout_width="76dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="10dp"
+        android:text="User"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/CourseViewID"
+        app:layout_constraintEnd_toStartOf="@+id/editUserID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CourseViewID"
+        android:layout_width="76dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="24dp"
+        android:text="Course"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tutorViewID"
+        app:layout_constraintEnd_toStartOf="@+id/editTutorID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewUserID" />
+
+    <TextView
+        android:id="@+id/tutorViewID"
+        android:layout_width="76dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="20dp"
+        android:text="Tutor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRequesrDate"
+        app:layout_constraintEnd_toStartOf="@+id/editCourseID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CourseViewID" />
+
+    <TextView
+            android:id="@+id/tvRequestTutor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="42dp"
+            android:text="Request for Tutor"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/editUserID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvRequesrDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="16dp"
+        android:text="Start Date"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvStartTime"
+        app:layout_constraintEnd_toStartOf="@+id/etStartDate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tutorViewID" />
+
+    <TextView
+            android:id="@+id/tvShowCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="132dp"
+            android:text="0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEndTime"
+        />
+
+    <Button
+        android:id="@+id/btnSubmitRequestTutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/buttonSecondary"
+        android:text="Submit"
+        android:textColor="@color/bootstrap_brand_secondary_fill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="24dp"
+        android:text="End Time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculateCost"
+        app:layout_constraintEnd_toStartOf="@+id/etEndTime"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStartTime" />
+
+    <EditText
+        android:id="@+id/etEndTime"
+        android:layout_width="207dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvShowCost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etStartTime" />
+
+    <EditText
+        android:id="@+id/editUserID"
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editCourseID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editCourseID"
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTutorID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUserID" />
+
+    <EditText
+        android:id="@+id/editTutorID"
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/etStartDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCourseID" />
+
+    <EditText
+        android:id="@+id/etStartDate"
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/etStartTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTutorID" />
+
+    <EditText
+        android:id="@+id/etStartTime"
+        android:layout_width="207dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/etEndTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etStartDate" />
+
+    <TextView
+        android:id="@+id/tvStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="40dp"
+        android:text="Start Time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEndTime"
+        app:layout_constraintEnd_toStartOf="@+id/etStartTime"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRequesrDate" />
+
+    <Button
+        android:id="@+id/btnCalculateCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="289dp"
+        android:layout_marginBottom="132dp"
+        android:text="Calculate Cost"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvShowCost"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEndTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context="com.company1.gpasaver.AddMyselfTutorActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="70dp"
+        android:gravity="center"
+        android:text="Become A Tutor"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="163dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="11dp"
+        android:src="@drawable/ic_group_black_24dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/course_dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.beardedhen.androidbootstrap.BootstrapDropDown
+        android:id="@+id/course_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="54dp"
+        android:text="Select course"
+        app:dropdownResource="@array/courses"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/etTutorName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1">
+
+    </com.beardedhen.androidbootstrap.BootstrapDropDown>
+
+
+    <com.beardedhen.androidbootstrap.BootstrapEditText
+        android:id="@+id/etTutorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="54dp"
+        android:background="@android:color/white"
+        android:hint="Enter your full name here"
+        android:padding="10dp"
+
+        app:bootstrapBrand="info"
+        app:bootstrapSize="lg"
+        app:layout_constraintBottom_toTopOf="@+id/etGpa"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/course_dropdown"
+        app:roundedCorners="true" />
+
+
+    <com.beardedhen.androidbootstrap.BootstrapEditText
+        android:id="@+id/etGpa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="54dp"
+        android:background="@android:color/white"
+        android:hint="GPA for this course"
+
+        android:padding="10dp"
+        app:bootstrapSize="lg"
+
+        app:layout_constraintBottom_toTopOf="@+id/etAvailability"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTutorName"
+        app:roundedCorners="true" />
+
+
+    <com.beardedhen.androidbootstrap.BootstrapEditText
+        android:id="@+id/etAvailability"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="54dp"
+        android:background="@android:color/white"
+
+        android:hint="Enter availability"
+
+        android:inputType="text"
+        android:padding="10dp"
+        app:bootstrapSize="lg"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddTutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etGpa"
+        app:roundedCorners="true" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/btnAddTutor"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="199dp"
+        android:backgroundTint="@color/buttonPrimary"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        app:bootstrapBrand="warning"
+        app:bootstrapSize="lg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAvailability"
+        app:roundedCorners="true" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/reviewMe"
+        android:layout_width="386dp"
+        android:layout_height="170dp"
+        android:gravity="top"
+        android:lines="28"
+        app:layout_constraintEnd_toEndOf="@id/replyReview"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="@id/replyReview"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/replyReview"
+        android:layout_width="388dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="48dp"
+        android:gravity="top"
+        android:hint="Write Reply"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviewMe"></EditText>
+
+    <Button
+        android:id="@+id/btnReply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#e57373"
+        android:text="Send feedback"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/replyReview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
